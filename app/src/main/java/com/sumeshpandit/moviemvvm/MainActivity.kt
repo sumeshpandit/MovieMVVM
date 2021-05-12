@@ -14,10 +14,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        rv_movies_list.layoutManager = LinearLayoutManager(this)
+        recycler_view.layoutManager = LinearLayoutManager(this)
 
         getMovieData { movies : List<Movie> ->
-            rv_movies_list.adapter = MovieAdapter(movies)
+            recycler_view.adapter = MovieAdapter(movies)
         }
 
     }
