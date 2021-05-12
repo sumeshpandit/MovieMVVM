@@ -2,6 +2,7 @@ package com.sumeshpandit.moviemvvm
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import retrofit2.Call
 import retrofit2.Callback
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         val apiService = MovieApiService.getInstance().create(MovieApiInterface::class.java)
         apiService.getMovieList().enqueue(object : Callback<MovieResponse> {
             override fun onFailure(call: Call<MovieResponse>, t: Throwable) {
-
+                Toast.makeText(this@MainActivity,"Something gone unexpected",Toast.LENGTH_SHORT).show()
             }
 
             override fun onResponse(call: Call<MovieResponse>, response: Response<MovieResponse>) {
